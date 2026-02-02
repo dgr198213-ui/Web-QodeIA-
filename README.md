@@ -75,6 +75,9 @@ Valor: cname.vercel-dns.com
 qodeia-web/
 ├── app/
 │   ├── page.tsx              # Página de inicio
+│   ├── admin/
+│   │   └── mcp/
+│   │       └── page.tsx      # NUEVO: Panel de Administración MCP
 │   ├── proyectos/
 │   │   └── page.tsx          # Página de proyectos
 │   ├── comunidad/
@@ -148,6 +151,13 @@ npx prettier --write .
 
 - **Email**: qodeia_info@gmail.com
 - **Ubicación**: Alcalá de Henares, España
+
+## 🔌 Administración MCP
+
+Se ha integrado un **Panel de Administración MCP** para gestionar la base de conocimiento de QodeIA (NotebookLM).
+
+- **Acceso**: `/admin/mcp`
+- **Funcionalidades**: Autenticación OAuth con Google, configuración de cuadernos, monitoreo de estadísticas y toggle de activación.
 
 ## 📄 Licencia
 
