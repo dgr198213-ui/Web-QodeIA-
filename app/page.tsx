@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/proyectos"
-              className="px-8 py-4 bg-gradient-to-r from-qodeia-blue-500 to-qodeia-mint-500 text-white font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-gradient-to-r from-qodeia-blue-600 to-qodeia-mint-800 text-white font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               Explorar Proyectos
             </Link>
@@ -117,7 +117,7 @@ export default function Home() {
               </p>
               <Link
                 href="/comunidad"
-                className="inline-block px-6 py-3 bg-qodeia-blue-500 text-white font-semibold rounded-lg hover:bg-qodeia-blue-600 transition-colors duration-300 mt-4"
+                className="inline-block px-6 py-3 bg-qodeia-blue-700 text-white font-semibold rounded-lg hover:bg-qodeia-blue-600 transition-colors duration-300 mt-4"
               >
                 Conoce la Comunidad →
               </Link>
