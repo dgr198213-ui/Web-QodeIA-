@@ -21,6 +21,8 @@ export default function Header() {
     { href: '/comunidad', label: 'Comunidad' },
     { href: '/sobre-qodeia', label: 'Sobre QODEIA' },
     { href: '/apoya', label: 'Apoya' },
+    { href: '/agente', label: '🤖 Agente' },
+    { href: 'https://plataforma-qd.vercel.app', label: '🖥️ Howard OS' },
   ]
 
   return (
