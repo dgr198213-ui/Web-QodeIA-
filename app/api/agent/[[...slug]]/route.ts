@@ -3,11 +3,10 @@ import { callAgentBackend } from '@/lib/api-config';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { slug?: string[] } }
+  { params }: { params: Promise<{ slug?: string[] }> }
 ) {
-  // El frontend llama a /api/agent, slug es undefined.
-  // El frontend llama a /api/agent/reload, slug es ['reload'].
-  const pathSuffix = params.slug ? `/${params.slug.join('/')}` : '';
+  const { slug } = await params;
+  const pathSuffix = slug ? `/${slug.join('/')}` : '';
   const path = `/api/agent${pathSuffix}`;
 
   const body = await request.json().catch(() => ({}));
@@ -31,9 +30,10 @@ export async function POST(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug?: string[] } }
+  { params }: { params: Promise<{ slug?: string[] }> }
 ) {
-  const pathSuffix = params.slug ? `/${params.slug.join('/')}` : '';
+  const { slug } = await params;
+  const pathSuffix = slug ? `/${slug.join('/')}` : '';
   const path = `/api/agent${pathSuffix}`;
 
   try {
