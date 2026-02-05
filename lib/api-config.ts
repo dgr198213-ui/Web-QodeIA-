@@ -1,29 +1,36 @@
 /**
  * Configuración de Conexión del Ecosistema QodeIA
- * Gestiona las URLs del Agente y Howard OS
+ * Gestiona las URLs del Agente, Howard OS y la Plataforma
  */
 
 export const API_CONFIG = {
   // El motor de ejecución y memoria operativa
-  AGENT_URL: process.env.NEXT_PUBLIC_AGENT_URL || 'http://localhost:3001',
+  AGENT_URL: process.env.NEXT_PUBLIC_AGENT_URL || 'https://your-agent.vercel.app',
   
-  // El sistema experto de arquitectura y contexto
+  // El sistema experto de arquitectura y contexto (Base de conocimientos)
   HOWARD_OS_URL: process.env.NEXT_PUBLIC_HOWARD_OS_URL || 'http://localhost:3002',
   
-  // Endpoints específicos
+  // La plataforma IDE
+  IDE_URL: process.env.NEXT_PUBLIC_IDE_URL || 'https://plataforma-qd.vercel.app',
+
+  // Endpoints específicos del Agente
   ENDPOINTS: {
     AGENT_CHAT: '/api/agent',
     MCP_STATS: '/api/mcp/stats',
     MCP_TEST: '/api/mcp/test',
     MCP_AUTH: '/api/mcp/auth/google',
+    AGENT_RELOAD: '/api/agent/reload',
+    UPDATE_ENV: '/api/mcp/update-env',
   }
 };
 
 /**
  * Helper para realizar peticiones al Agente
+ * Utilizado por las rutas de API proxy
  */
-export async function callAgent(endpoint: string, options: RequestInit = {}) {
+export async function callAgentBackend(endpoint: string, options: RequestInit = {}) {
   const url = `${API_CONFIG.AGENT_URL}${endpoint}`;
+
   const response = await fetch(url, {
     ...options,
     headers: {
@@ -32,9 +39,5 @@ export async function callAgent(endpoint: string, options: RequestInit = {}) {
     },
   });
   
-  if (!response.ok) {
-    throw new Error(`Error en la llamada al Agente: ${response.statusText}`);
-  }
-  
-  return response.json();
+  return response;
 }
