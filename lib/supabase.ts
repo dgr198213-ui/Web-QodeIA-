@@ -1,12 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/ssr';
 
 /**
  * Cliente para la Base de Datos Operativa (Agente QodeIA)
  * Gestiona: Sesiones de usuario, Proyectos, Estado del Agente.
- * Utiliza Auth Helpers para integrarse con Next.js en el cliente.
+ * Utiliza @supabase/ssr para integrarse con Next.js en el cliente.
  */
-export const getOperativeSupabase = () => createClientComponentClient();
+export const getOperativeSupabase = () => createBrowserClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 /**
  * Cliente para la Base de Datos de Conocimiento (Howard OS)
