@@ -1,6 +1,11 @@
 # QODEIA - Web Oficial
 
-Un espacio para crear, conectar y crecer juntos.
+Un espacio para crear, conectar y crecer juntos. El portal central de la comunidad QodeIA.
+
+## 🔗 Ecosistema QodeIA
+Esta plataforma web actúa como el centro neurálgico y administrativo del ecosistema **QodeIA**, integrándose con:
+*   **[Mi-agente-QodeIA-](https://github.com/dgr198213-ui/Mi-agente-QodeIA-)**: El motor de IA autónomo que utiliza la base de conocimiento gestionada desde este portal (vía MCP) para ejecutar tareas complejas.
+*   **[Plataforma-qd](https://github.com/dgr198213-ui/Plataforma-qd)**: El entorno de desarrollo (Howard OS) donde los usuarios interactúan con la IA y visualizan los resultados de la gestión de conocimiento.
 
 ## 🚀 Tecnologías
 
@@ -8,6 +13,7 @@ Un espacio para crear, conectar y crecer juntos.
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Diseño moderno y responsive
 - **Framer Motion** - Animaciones suaves
+- **MCP (Model Context Protocol)** - Integración nativa para gestión de conocimiento
 
 ## 📦 Instalación
 
@@ -17,154 +23,50 @@ npm install
 
 # Ejecutar en desarrollo
 npm run dev
-
-# Construir para producción
-npm run build
-
-# Iniciar servidor de producción
-npm start
 ```
 
 La aplicación estará disponible en `http://localhost:3000`
 
-## 🌐 Despliegue en Vercel
-
-### Opción 1: Desde la interfaz de Vercel
-
-1. Ve a [vercel.com](https://vercel.com)
-2. Crea una cuenta o inicia sesión
-3. Click en "Add New Project"
-4. Importa tu repositorio de GitHub/GitLab/Bitbucket
-5. Vercel detectará automáticamente que es un proyecto Next.js
-6. Click en "Deploy"
-
-### Opción 2: Desde la terminal (Vercel CLI)
-
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
-
-# Desplegar
-vercel
-
-# Para producción
-vercel --prod
-```
-
-### Configuración del Dominio
-
-1. En Vercel, ve a tu proyecto
-2. Settings → Domains
-3. Añade tu dominio `qodeia.com`
-4. Sigue las instrucciones para configurar los registros DNS
-
-**Registros DNS necesarios:**
-```
-Tipo: A
-Nombre: @
-Valor: 76.76.21.21
-
-Tipo: CNAME
-Nombre: www
-Valor: cname.vercel-dns.com
-```
-
-## 📁 Estructura del Proyecto
-
-```
-qodeia-web/
-├── app/
-│   ├── page.tsx              # Página de inicio
-│   ├── admin/
-│   │   └── mcp/
-│   │       └── page.tsx      # NUEVO: Panel de Administración MCP
-│   ├── proyectos/
-│   │   └── page.tsx          # Página de proyectos
-│   ├── comunidad/
-│   │   └── page.tsx          # Página de comunidad
-│   ├── sobre-qodeia/
-│   │   └── page.tsx          # Sobre QODEIA
-│   ├── apoya/
-│   │   └── page.tsx          # Página de apoyo
-│   ├── layout.tsx            # Layout principal
-│   └── globals.css           # Estilos globales
-├── components/
-│   ├── Header.tsx            # Navegación
-│   └── Footer.tsx            # Pie de página
-├── public/                   # Archivos estáticos
-└── package.json
-```
-
-## 🎨 Personalización
-
-### Colores de marca (Tailwind Config)
-
-Los colores de QODEIA están configurados en `tailwind.config.js`:
-
-- **Azul QODEIA**: `qodeia-blue-500` (#0087b1)
-- **Verde Menta**: `qodeia-mint-500` (#00cd91)
-- **Azul Oscuro**: `qodeia-dark-500` (#192b37)
-
-### Fuentes
-
-- **Títulos**: Outfit (Google Fonts)
-- **Texto**: Inter (Google Fonts)
-
-## 📝 Contenido
-
-Para actualizar los textos, edita directamente los archivos `.tsx` en cada página.
-
-### Añadir nuevos proyectos
-
-Edita el array `projects` en `app/proyectos/page.tsx`:
-
-```tsx
-const projects = [
-  {
-    id: 'nuevo-proyecto',
-    title: 'Nombre del Proyecto',
-    icon: '🚀',
-    status: 'En desarrollo',
-    statusColor: 'mint',
-    description: 'Descripción breve...',
-    story: 'Historia del proyecto...',
-    features: ['Feature 1', 'Feature 2'],
-    link: 'https://tu-proyecto.com',
-  },
-]
-```
-
-## 🔧 Comandos útiles
-
-```bash
-# Limpiar caché de Next.js
-rm -rf .next
-
-# Verificar errores de TypeScript
-npm run lint
-
-# Formatear código
-npx prettier --write .
-```
-
-## 📞 Contacto
-
-- **Email**: qodeia_info@gmail.com
-- **Ubicación**: Alcalá de Henares, España
-
 ## 🔌 Administración MCP
-
-Se ha integrado un **Panel de Administración MCP** para gestionar la base de conocimiento de QodeIA (NotebookLM).
+Se ha integrado un **Panel de Administración MCP** para gestionar la base de conocimiento de QodeIA (NotebookLM). Este panel permite que el Agente QodeIA acceda a documentación técnica actualizada y validada.
 
 - **Acceso**: `/admin/mcp`
 - **Funcionalidades**: Autenticación OAuth con Google, configuración de cuadernos, monitoreo de estadísticas y toggle de activación.
 
-## 📄 Licencia
+## 📁 Estructura del Proyecto
 
+```
+Web-QodeIA-/
+├── app/
+│   ├── admin/mcp/            # Panel de Administración MCP (Cerebro del ecosistema)
+│   ├── proyectos/            # Catálogo de proyectos QodeIA
+│   ├── comunidad/            # Espacio de interacción
+│   └── apoya/                # Sistema de soporte y donaciones
+├── components/               # Componentes compartidos de la UI
+└── lib/                      # Utilidades y clientes de API (Supabase, MCP)
+```
+
+## 🎨 Personalización
+Los colores de QODEIA están configurados en `tailwind.config.js`:
+- **Azul QODEIA**: `#0087b1`
+- **Verde Menta**: `#00cd91`
+- **Azul Oscuro**: `#192b37`
+
+## 🌐 Despliegue en Vercel
+El proyecto está optimizado para desplegarse en Vercel, permitiendo actualizaciones continuas y escalabilidad inmediata.
+
+1. Conecta el repositorio a Vercel.
+2. Configura las variables de entorno para Google OAuth y Supabase.
+3. El dominio oficial es `qodeia.com`.
+
+## 📞 Contacto
+- **Email**: qodeia_info@gmail.com
+- **Ubicación**: Alcalá de Henares, España
+
+## 📄 Licencia
 Este proyecto es de código abierto y está disponible para toda la comunidad QODEIA.
 
 ---
 
 **Creado con 💛 desde Alcalá de Henares**
-
 *Crecemos juntos, siempre* ✨
