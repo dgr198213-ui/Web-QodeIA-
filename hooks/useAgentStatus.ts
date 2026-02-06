@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export function useAgentStatus() {
-  const [status, setStatus] = useState({ service: 'agent', status: 'unknown' });
+  const [status, setStatus] = useState<any>({ service: 'agent', status: 'unknown' });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
