@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function ServicesPanel() {
   const { status, isLoading } = useAgentStatus();
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case 'ok': return 'bg-green-500';
       case 'down': return 'bg-red-500';
