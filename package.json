@@ -12,8 +12,8 @@
     "next": "15.1.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@supabase/supabase-js": "^2.94.1",
-    "@supabase/ssr": "^0.6.0",
+    "@supabase/supabase-js": "^2.105.1",
+    "@supabase/ssr": "^0.10.2",
     "framer-motion": "^12.31.1"
   },
   "devDependencies": {
