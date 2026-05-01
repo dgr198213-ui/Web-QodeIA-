@@ -1,5 +1,10 @@
 # QODEIA - Web Oficial
 
+[![CI](https://github.com/dgr198213-ui/Web-QodeIA-/actions/workflows/ci.yml/badge.svg)](https://github.com/dgr198213-ui/Web-QodeIA-/actions)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+
 Un espacio para crear, conectar y crecer juntos. El portal central de la comunidad QodeIA.
 
 ## 🔗 Ecosistema QodeIA
